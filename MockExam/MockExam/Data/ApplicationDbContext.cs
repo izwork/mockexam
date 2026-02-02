@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Humanizer;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using MockExam.Models;
 
 namespace MockExam.Data
 {
@@ -9,5 +11,10 @@ namespace MockExam.Data
             : base(options)
         {
         }
+
+        public DbSet<MockExam.Models.Rooms> Rooms { get; set; } = default!;
+        public DbSet<MockExam.Models.Staff> Staff { get; set; } = default!;
+        public DbSet<MockExam.Models.Bookings> Bookings { get; set; } = default!;
     }
 }
+
